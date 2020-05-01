@@ -1,10 +1,147 @@
 <!DOCTYPE HTML>
-<html>
 
+<html> 
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		html, body {padding: 0; margin: 0;}
+		* {box-sizing: border-box;}
+		canvas {
+			background: black;
+			margin: 0 auto;
+			display: block;
+		}
+	</style>
+</head>
 <body>
+	<canvas id="mc" width="1280" height="720"></canvas>
+	<script>
+		window.onload = function() {
+			document.addEventListener('keydown', chngeDirection);
+			setInterval(loop, 1000/60);
+		}
 
-ПРИВЕТ
-  
+		var
+			canv 			= document.getElementById('mc'),
+			ctx 			= canv.getContext('2d'),
+			gs = fkp 		= false,
+			speed = baseSpeed 	= 3,
+			xv = yv			= 0,
+  			px 				= ~~(canv.width) / 2, // player X position
+  			py 				= ~~(canv.height) / 2, // player Y position
+			pw = ph			= 20,
+			aw = ah	        = 20,
+			apples			= [],
+			trail 			= [],
+			tail 			= 100,
+			tailSafeZone	= 20,
+			cooldown		= false,
+			score 			= 0;
+
+		//начало
+		function loop()
+		{
+
+			ctx.fillStyle = 'black';
+			ctx.fillRect(0, 0, canv.width, canv.height);
+
+			px += xv;
+			py += yv;
+
+			if( px > canv.width ) 
+				{px = 0;}
+
+			if( px + pw < 0) 
+				{px = canv.width;}
+
+			if( py + ph < 0) 
+				{py = canv.height;}
+
+			if( py > canv.height) 
+				{py = 0;}
+
+			ctx.fillStyle = 'lime';
+			for( var i = 0; i < trail.length; i++ )
+			{
+				ctx.fillStyle = trail[i].color || 'lime';
+				ctx.fillRect(trail[i].x, trail[i].y, pw, ph);
+			}
+
+			trail.push({x: px, y: py, color: ctx.fillStyle});
+
+			if( trail.length > tail )
+			{
+				trail.shift();
+			}
+
+			if( trail.length > tail )
+			{
+				trail.shift();
+			}
+
+			if ( trail.length >= tail && gs) 
+			{
+				for (var i = trail.length - tailSafeZone; i >= 0; i--) 
+				{
+					if(
+						px < (trail[i].x + pw)
+						&& px + pw > trail[i].x
+						&& py < (trail[i].y + ph)
+						&& py + ph > trail[i].y
+					) 
+					{
+						tail = 10; 
+						speed = baseSpeed;
+
+						for (var t = 0; t < trail.length; t++) 
+						{
+							trail[t].color = 'red';
+
+							if( t >= trail.length - tail)
+								{break;}		
+						}
+					}
+				}
+			}
+		}
+
+		function spawApple()
+		{}
+
+		function rc()
+		{
+		  return '#' + ((~~(Math.random() * 255)).toString(16)) + ((~~(Math.random() * 255)).toString(16)) + ((~~(Math.random() * 255)).toString(16));
+		}
+
+		function chngeDirection(evt)
+		{
+			if( !fkp && [37,38,39,40].indexOf(evt.keyCode) > -1 )
+			{
+				setTimeout(function() {gs = true;}, 1000);
+				fkp = true;
+				spawnApple();
+			}
+
+			if( cooldown )
+			    {return false;}			
+
+			if (evt.keyCode == 37 && !(xv > 0) ) 
+				{xv = -speed; yv = 0;}
+
+			if (evt.keyCode == 38 && !(yv > 0) ) 
+				{xv = 0; yv = -speed;}
+
+			if (evt.keyCode == 39 && !(xv < 0) ) 
+				{xv = speed; yv = 0;}
+
+			if (evt.keyCode == 40 && !(yv < 0) ) 
+				{xv = 0; yv = speed;}
+
+			cooldown = true;
+			setTimeout(function(){cooldown = false;}, 100)
+		}
+	</script>
+
 </body>
 
 </html>
