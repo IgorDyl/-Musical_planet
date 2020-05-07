@@ -103,11 +103,70 @@
 					}
 				}
 			}
+
+			for (var  a = 0; a < apples.length; a++ ) 
+			{
+			    ctx.fillStyle = apples[a].color;
+			    ctx.fillRect(apples[a].x, apples[a].y, aw, ah);
+			}			
+
+			for (var a = 0; a < apples.length; a++) 
+			{
+				if(
+						px < (apples[a].x + pw)
+						&& px + pw > apples[a].x
+						&& py < (apples[a].y + ph)
+						&& py + ph > apples[a].y
+				)
+				{
+					apples.splice(a, 1);
+					tail += 10;
+					speed += .1;
+					spawnApple();
+					break;
+				}	
+			}
 		}
 
-		function spawApple()
-		{}
+		function spawnApple()
+		{
+		  var
+		    newApple = {
+		      x: ~~(Math.random() * canv.width),
+		      y: ~~(Math.random() * canv.height),
+		      color: 'red'
+		    };
 
+			if (
+				(newApple.x < aw || newApple.x > canv.width - aw) 
+				||
+				(newApple.y < ah || newApple.y > canv.height - ah)
+				)
+			{
+				spawnApple();
+				return;
+			}
+
+			for (var i = 0; i < tail.length; i++) {
+				if (
+				      newApple.x < (trail[i].x + pw)
+				      && newApple.x + aw > trail[i].x
+				      && newApple.y < (trail[i].y + ph)
+				      && newApple.y + ah > trail[i].y
+					) 
+				{
+					spawnApple();
+					return;
+				}
+			}
+
+			apples.push(newApple);
+
+			if (apples.length < 3 && ~~(Math.random() * 1000) > 700 ) 
+			{
+				spawnApple();
+			}
+		}
 		function rc()
 		{
 		  return '#' + ((~~(Math.random() * 255)).toString(16)) + ((~~(Math.random() * 255)).toString(16)) + ((~~(Math.random() * 255)).toString(16));

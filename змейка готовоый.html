@@ -1,3 +1,4 @@
+<script type="text/javascript">
 window.onload = function() {
   document.addEventListener('keydown', changeDirection);
   setInterval(loop, 1000/60); // 60 FPS
@@ -204,3 +205,4 @@ function changeDirection(evt)
   cooldown = true;
   setTimeout(function() {cooldown = false;}, 100);
 }
+</script>
