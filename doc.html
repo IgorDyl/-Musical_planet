@@ -14,16 +14,19 @@
 	</style>
 </head>
 <body>
+	<h1 id="time">Текущий - <div id="min"></div> </h1>
+	<h1 id="time1">Лучший - <div id="min1"></div> </h1>    
 	<canvas id="mc" width="1280" height="720"></canvas>
 	<script>
+
 		window.onload = function() {
 			document.addEventListener('keydown', chngeDirection);
 			setInterval(loop, 1000/60);
 		}
 
 		var
-			canv 			= document.getElementById('mc'),
-			ctx 			= canv.getContext('2d'),
+			canv 			= document.getElementById('mc'), // Возвращает ссылку на элемент по его идентификатору (ID);
+			ctx 			= canv.getContext('2d'), // getContext - этот метод генерирует контекст рисования, который будет связан с указанным холстом
 			gs = fkp 		= false,
 			speed = baseSpeed 	= 3,
 			xv = yv			= 0,
@@ -37,18 +40,19 @@
 			tailSafeZone	= 20,
 			cooldown		= false,
 			score 			= 0;
+			bestcscore		= 0;
 
 		//начало
 		function loop() // оснавная функция 
 		{
 
 			ctx.fillStyle = 'black';
-			ctx.fillRect(0, 0, canv.width, canv.height);
+			ctx.fillRect(0, 0, canv.width, canv.height); //  Метод fillRect() рисует "залитый" прямоугольник. Цвет заливки, по умолчанию, черный.
 
 			px += xv;
 			py += yv;
 
-			if( px > canv.width ) 
+			if( px > canv.width )
 				{px = 0;}
 
 			if( px + pw < 0) 
@@ -60,10 +64,10 @@
 			if( py > canv.height) 
 				{py = 0;}
 
-			ctx.fillStyle = 'lime';
+			ctx.fillStyle = '#11FFEE50';
 			for( var i = 0; i < trail.length; i++ )
 			{
-				ctx.fillStyle = trail[i].color || 'lime';
+				ctx.fillStyle = trail[i].color || '#11FFEE50';
 				ctx.fillRect(trail[i].x, trail[i].y, pw, ph);
 			}
 
@@ -95,10 +99,13 @@
 
 						for (var t = 0; t < trail.length; t++) 
 						{
-							trail[t].color = 'red';
+							trail[t].color = 'grey';
 
 							if( t >= trail.length - tail)
-								{break;}		
+								{
+									score = 0;
+									break;
+								}	
 						}
 					}
 				}
@@ -122,10 +129,18 @@
 					apples.splice(a, 1);
 					tail += 10;
 					speed += .1;
+					score += 1;
 					spawnApple();
+					document.getElementById("min").innerHTML = score;
 					break;
 				}	
 			}
+
+			if (score > bestcscore) 
+				{
+					bestcscore += 1;
+					document.getElementById("min1").innerHTML = bestcscore;
+				}
 		}
 
 		function spawnApple() // рисуем яблоки
