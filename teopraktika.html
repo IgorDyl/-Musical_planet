@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Learning</title>
+</head>
+<body>
+
+<script>
+	
+
+
+/*
+11.05
+
+
+Уроки JavaScript Практика
+
+https://www.youtube.com/watch?v=JISFx18J7nc&list=PLVfMKQXDAhGW0p_BEEe47UkCgNoS_dyki
+
+Самый захватывающий способ обучения реальному программированию.
+https://codecombat.com/
+
+
+https://www.pluralsight.com/product/skills/personal
+
+
+https://www.codeavengers.com/
+
+https://www.codecademy.com/
+
+https://www.freecodecamp.org/
+
+https://fooobar.com/questions/tagged/javascript
+
+https://learn.javascript.ru/
+
+------------------------------------------
+
+*/
+/*
+	if (false) {
+	let age = prompt('Сколько тебе лет?', )
+	let se = age;
+	document.getElementById('se').innerHTML = se;
+	}
+
+	if (false){
+		let qwe = prompt('Сколько тебе лет?', 100);
+	};
+
+
+	if (false)
+	{
+		let isBoss = confirm("Ты здесь главный?");
+		alert( isBoss ); // true, если нажата OK
+	}
+
+	let isBoss = confirm("Ты здесь главный?");
+
+	if (isBoss == true) {
+		document.getElementById('se').innerHTML = 3;
+	} else {
+		document.getElementById('se').innerHTML = 5;
+	}
+*/	
+
+
+/*
+------------------------------------------
+12.05
+
+Еще один отличный ресурс для изучения JS
+https://helpx.adobe.com/ru/photoshop/using/export-artboards-layers.html
+
+CodeCombat
+1-2й уровень-методы moveDown, moveLeft, moveRight и moveUp 
+3й уровень  -
+
+randomNumber = Math.random()                   // 0.0789472
+gems = Math.ceil(2 * randomNumber * me.level)  // 1
+me.gems += gems                                // 83
+
+Метод Math.random() 
+-возвращает псевдослучайное число с плавающей запятой из диапазона [0, 1), то есть, от 0 (включительно) до 1 (но не включая 1), которое затем можно отмасштабировать до нужного диапазона. Реализация сама выбирает начальное зерно для алгоритма генерации случайных чисел; оно не может быть выбрано или сброшено пользователем.
+
+Метод Math.floor() 
+- округление вниз. Округляет аргумент до ближайшего меньшего целого.
+
+Поскольку метод floor() является статическим методом объекта Math, вы всегда должны использовать его как Math.floor(), а не пытаться вызывать метод на созданном экземпляре объекта Math (поскольку объект Math не является конструктором).
+--------------
+function() {
+  d.textContent = "", f()
+}
+function() {
+  window.location.reload()
+}
+
+function() {
+  d.classList.remove("fade-in")
+}
+----------------
+*/
+
+
+alert(Math.random());  // [0;1)
+
+function getRandomInt(max) {
+	return Math.floor(Math.random()*~~(max));
+}
+alert(getRandomInt(99));
+
+alert(Math.floor(12.9155112));
+
+alert(~~(15.9155112));
+
+alert(~~(-11.00000515));
+
+//Оператор typeof возвращает строку, указывающую тип операнда.
+
+alert(typeof 42); //number
+
+alert(typeof 'stroka'); //string
+
+alert(typeof true);  //bulean
+
+alert(typeof undeclaredVariable); //undef
+
+alert(typeof NaN); //number//NaN - (Not a Number) Глобальное свойство NaN является значением, представляющим не-число
+
+alert(typeof isNaN); //function
+alert(typeof isNaN()); //bulean?
+
+
+
+/*---------------------------
+Функция isNaN() определяет является ли литерал или переменная нечисловым значением (NaN) или нет. При работе с функцией необходимо проявлять осторожность так как она имеет свои особенности. В качестве альтернативы можно использовать метод Number.isNaN() из ECMAScript 6, или дополнительно проверять литерал или переменную на нечисловое значение при помощи typeof.
+*/
+//numbers
+
+/* alert ne robotaet???
+alert(isNaN(Nan));		// true
+alert(isNaN(undefined));// true
+alert(isNaN({}));		// true
+alert(isNaN(true));		// false
+alert(isNaN(null));		// false
+alert(isNaN(55));		// false
+
+//strings
+alert(isNaN("55"));		// false: "55" преобразуется в число 55 которое не NaN
+alert(isNaN("55.55"));  // -//-
+alert(isNaN(""));		// false: пустая строка преобразуется в 0 которое не NaN
+alert(isNaN(" "));		// false: строка с пробелом преобразуется в 0 которое не NaN
+alert(isNaN(55,5));		// true
+
+
+
+//Date
+alert(isNaN(new Date());//false
+alert(isNaN(new Date().ToString()));//true
+
+alert(isNaN("epta"));   // true: "epta" преобразованно в число. 
+                  // При парсинге преобразуется в число при неудаче возвращает NaN
+----------------------------------------------*/
+
+
+//Изменение округления десятичных дробей
+/*
+	*{string} type   -Тип корректировки
+	*{number} value  -Число.
+	*{Integer} exp   -Показатель степени (десятичный логарифм основания корректировки).
+	*{number}        - скорректированное значение.
+*/
+/*
+function decimalAdjust(type, value, exp) {
+	//Если степень не определена, либо равна нулю...
+	if (typeof exp === 'undefined' || +exp ===0) {
+		return Math[type](value);
+	}
+	value = +value;
+	exp = +exp;
+	//Если значение не является числом, либо степень не является целым числом...
+	if (isNaN(value) || !(typeof ))
+}*/
+
+/* 31.05  
+! 141 строка не работают алерты
+! 174 дописать функцию. 
+https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+! 91-102 написать функции Run  , Reset , Show
+*/
+
+
+</script>
+	
+</body>
+</html>
