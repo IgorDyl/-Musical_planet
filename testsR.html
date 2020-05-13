@@ -145,14 +145,57 @@
 		alert( isBoss ); // true, если нажата OK
 	}
 
-	let isBoss = confirm("Ты здесь главный?");
 
-	if (isBoss == true) {
-		document.getElementById('se').innerHTML = 3;
-	} else {
-		document.getElementById('se').innerHTML = 5;
+
+	if (false) {
+		let isBoss = confirm("Ты здесь главный?");
+		if (isBoss == true) {
+			document.getElementById('se').innerHTML = 3;
+		} else {
+			document.getElementById('se').innerHTML = 5;
+		}
 	}
-	
+
+	/*  
+	Условный оператор „?“Иногда, нам нужно назначить переменную в зависимости от условия.
+	Например:
+	let accessAllowed;
+	let age = prompt('Сколько вам лет?', '');
+
+	if (age > 18) {
+	  accessAllowed = true;
+	} else {
+	  accessAllowed = false;
+	}
+	alert(accessAllowed);
+
+	Так называемый «условный» оператор «вопросительный знак» позволяет нам сделать это более коротким и простым способом.
+	Оператор представлен знаком вопроса ?. Его также называют «тернарный», так как этот оператор, единственный в своём роде, имеет три аргумента.
+
+	let accessAllowed = (age > 18) ? true : false; // тоже самое что и условие выше. 
+	*/
+
+	if (false){
+		let cif = prompt("введите цифру",);
+		if (cif > 0 ) {
+			alert('1');
+		} else if (cif < 0) {
+			alert ('-1');
+		} else {
+			alert('0');
+		}
+	}
+	if (false) {
+		let login = prompt("введите должность",)
+			
+		let message = (login == 'Сотрудник') ? 'Привет' : 
+				  (login == 'Директор') ? 'Здравствуйте' :
+				  (login == '') ? 'Нет логина' : 'Неизвестный логин';
+
+		alert(message);
+		alert(login);
+	}
+
 	</script>
 </body>
 
