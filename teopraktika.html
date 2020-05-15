@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>JS Learning</title>
+  <meta charset="UTF-8">
+  <title>JS Learning</title>
 </head>
 <body>
 
 <script>
-	
+  
 
 
 /*
-11.05
+
 
 
 Уроки JavaScript Практика
@@ -39,39 +39,42 @@ https://learn.javascript.ru/
 
 */
 /*
-	if (false) {
-	let age = prompt('Сколько тебе лет?', )
-	let se = age;
-	document.getElementById('se').innerHTML = se;
-	}
+  if (false) {
+  let age = prompt('Сколько тебе лет?', )
+  let se = age;
+  document.getElementById('se').innerHTML = se;
+  }
 
-	if (false){
-		let qwe = prompt('Сколько тебе лет?', 100);
-	};
+  if (false){
+    let qwe = prompt('Сколько тебе лет?', 100);
+  };
 
 
-	if (false)
-	{
-		let isBoss = confirm("Ты здесь главный?");
-		alert( isBoss ); // true, если нажата OK
-	}
+  if (false)
+  {
+    let isBoss = confirm("Ты здесь главный?");
+    alert( isBoss ); // true, если нажата OK
+  }
 
-	let isBoss = confirm("Ты здесь главный?");
+  let isBoss = confirm("Ты здесь главный?");
 
-	if (isBoss == true) {
-		document.getElementById('se').innerHTML = 3;
-	} else {
-		document.getElementById('se').innerHTML = 5;
-	}
-*/	
+  if (isBoss == true) {
+    document.getElementById('se').innerHTML = 3;
+  } else {
+    document.getElementById('se').innerHTML = 5;
+  }
+*/  
 
 
 /*
 ------------------------------------------
-12.05
+
 
 Еще один отличный ресурс для изучения JS
 https://helpx.adobe.com/ru/photoshop/using/export-artboards-layers.html
+
+https://schoolsw3.com/js/index.php
+
 
 CodeCombat
 1-2й уровень-методы moveDown, moveLeft, moveRight и moveUp 
@@ -88,25 +91,31 @@ me.gems += gems                                // 83
 - округление вниз. Округляет аргумент до ближайшего меньшего целого.
 
 Поскольку метод floor() является статическим методом объекта Math, вы всегда должны использовать его как Math.floor(), а не пытаться вызывать метод на созданном экземпляре объекта Math (поскольку объект Math не является конструктором).
---------------
+>----доп задание-------------------->
+--------------дописать функцию 
 function() {
   d.textContent = "", f()
 }
+--------------дописать функцию 
 function() {
   window.location.reload()
 }
-
+--------------дописать функцию 
 function() {
   d.classList.remove("fade-in")
 }
-----------------
+--------------<-----------------------<
 */
 
 
+
+
+
+/*
 alert(Math.random());  // [0;1)
 
 function getRandomInt(max) {
-	return Math.floor(Math.random()*~~(max));
+  return Math.floor(Math.random()*~~(max));
 }
 alert(getRandomInt(99));
 
@@ -132,26 +141,26 @@ alert(typeof isNaN); //function
 alert(typeof isNaN()); //bulean?
 
 
-
+*/
 /*---------------------------
 Функция isNaN() определяет является ли литерал или переменная нечисловым значением (NaN) или нет. При работе с функцией необходимо проявлять осторожность так как она имеет свои особенности. В качестве альтернативы можно использовать метод Number.isNaN() из ECMAScript 6, или дополнительно проверять литерал или переменную на нечисловое значение при помощи typeof.
 */
 //numbers
 
 /* alert ne robotaet???
-alert(isNaN(Nan));		// true
+alert(isNaN(Nan));    // true
 alert(isNaN(undefined));// true
-alert(isNaN({}));		// true
-alert(isNaN(true));		// false
-alert(isNaN(null));		// false
-alert(isNaN(55));		// false
+alert(isNaN({}));   // true
+alert(isNaN(true));   // false
+alert(isNaN(null));   // false
+alert(isNaN(55));   // false
 
 //strings
-alert(isNaN("55"));		// false: "55" преобразуется в число 55 которое не NaN
+alert(isNaN("55"));   // false: "55" преобразуется в число 55 которое не NaN
 alert(isNaN("55.55"));  // -//-
-alert(isNaN(""));		// false: пустая строка преобразуется в 0 которое не NaN
-alert(isNaN(" "));		// false: строка с пробелом преобразуется в 0 которое не NaN
-alert(isNaN(55,5));		// true
+alert(isNaN(""));   // false: пустая строка преобразуется в 0 которое не NaN
+alert(isNaN(" "));    // false: строка с пробелом преобразуется в 0 которое не NaN
+alert(isNaN(55,5));   // true
 
 
 
@@ -166,32 +175,193 @@ alert(isNaN("epta"));   // true: "epta" преобразованно в числ
 
 //Изменение округления десятичных дробей
 /*
-	*{string} type   -Тип корректировки
-	*{number} value  -Число.
-	*{Integer} exp   -Показатель степени (десятичный логарифм основания корректировки).
-	*{number}        - скорректированное значение.
+  *{string} type   -Тип корректировки
+  *{number} value  -Число.
+  *{Integer} exp   -Показатель степени (десятичный логарифм основания корректировки).
+  *{number}        - скорректированное значение.
 */
-/*
+/* 
 function decimalAdjust(type, value, exp) {
-	//Если степень не определена, либо равна нулю...
-	if (typeof exp === 'undefined' || +exp ===0) {
-		return Math[type](value);
-	}
-	value = +value;
-	exp = +exp;
-	//Если значение не является числом, либо степень не является целым числом...
-	if (isNaN(value) || !(typeof ))
-}*/
+    // Если степень не определена, либо равна нулю...
+    if (typeof exp === 'undefined' || +exp === 0) {
+      return Math[type](value);
+    }
+    value = +value;
+    exp = +exp;
+    // Если значение не является числом, либо степень не является целым числом...
+    if (isNaN(value) || !(typeof exp === 'number' && exp % 1 === 0)) {
+      return NaN;
+    }
+    // Сдвиг разрядов
+    value = value.toString().split('e');
+    value = Math[type](+(value[0] + 'e' + (value[1] ? (+value[1] - exp) : -exp)));
+    // Обратный сдвиг
+    value = value.toString().split('e');
+    return +(value[0] + 'e' + (value[1] ? (+value[1] + exp) : exp));
+  }
 
-/* 31.05  
+  // Десятичное округление к ближайшему
+  if (!Math.round10) {
+    Math.round10 = function(value, exp) {
+      return decimalAdjust('round', value, exp);
+    };
+  }
+  // Десятичное округление вниз
+  if (!Math.floor10) {
+    Math.floor10 = function(value, exp) {
+      return decimalAdjust('floor', value, exp);
+    };
+  }
+  // Десятичное округление вверх
+  if (!Math.ceil10) {
+    Math.ceil10 = function(value, exp) {
+      return decimalAdjust('ceil', value, exp);
+    };
+  }
+};
+
+// Округление к ближайшему
+alert(Math.round10(55.55, -1));   // 55.6
+// Округление к ближайшему
+Math.round10(55.55, -1);   // 55.6
+Math.round10(55.549, -1);  // 55.5
+Math.round10(55, 1);       // 60
+Math.round10(54.9, 1);     // 50
+Math.round10(-55.55, -1);  // -55.5
+Math.round10(-55.551, -1); // -55.6
+Math.round10(-55, 1);      // -50
+Math.round10(-55.1, 1);    // -60
+// Округление вниз
+Math.floor10(55.59, -1);   // 55.5
+Math.floor10(59, 1);       // 50
+Math.floor10(-55.51, -1);  // -55.6
+Math.floor10(-51, 1);      // -60
+// Округление вверх
+Math.ceil10(55.51, -1);    // 55.6
+Math.ceil10(51, 1);        // 60
+Math.ceil10(-55.59, -1);   // -55.5
+Math.ceil10(-59, 1);       // -50
+
+
+/* 
 ! 141 строка не работают алерты
-! 174 дописать функцию. 
+! 174 функция не пашет. 
 https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
 ! 91-102 написать функции Run  , Reset , Show
 */
 
 
+/*
+Аргумент - это информация заключенная между ( и ) когда ВЫЗЫВАЕТСЯ метод или функция.
+Существуют методы, которым обязательно требуются АРГУМЕНТЫ, в их отсутствии они не будут знать что делать.
+
+while(true) - разновидность цикла, выполняется до тех пор пока выполняется условие в скобках
+*/
+
+
+/*
+let x = 0;
+
+while(x<5) {
+    alert(x); x++;
+    }
+
+*/
+
 </script>
-	
+  
+<h2>Кнопочка, дата показывалочка</h2>
+
+<button type="button" id="but">
+Щелкните меня, чтобы отобразить дату и время.</button>
+
+<p id="demo"></p>
+
+
+<p>Пиши а я повторю</p>
+<input id="input" type="text"> </input>
+<span id="result"></span>
+
+<p>------------------------------------------------------------</p>
+
+
+<input id="number_input" type="text"> </input>
+<button type="button" id="but2">KNOPKA.</button>
+<p>Записанное число</p>
+<p id="forbut_2_3">v</p>
+<p>Рандом от заданного числа</p>
+<p id="forbut_2_2">z</p>
+<p>Деления (80 / z )</p>
+<p id="forbut_2_1">y</p>
+<p>умножение (10* z)  </p>
+<p id="forbut_2_0">x </p>
+<p> Остаток от деления 99(%) </p>
+<p id="forbut_2_4"> h</p>
+
+
+
+
+<script>
+
+
+  but.onclick = function () {
+  demo.innerHTML = Date();
+    };
+/*alert(15 % 9);
+%- выводит остаток после деления 
+*/
+/*
+ let z = getRandomInt(9);
+    let x = 15;
+    let y = x; 
+    forbut_2_2.innerHTML = z;
+
+*/
+ input.oninput = function() {
+      result.innerHTML = input.value;
+     };
+
+
+var v;
+
+number_input.onchange = function () {
+    v = number_input.value;
+}
+
+number_input.onchange = function () {
+    v = number_input.value;
+}
+
+  but2.onclick = function () {
+    let x=10;
+    let y=80;
+    let z;
+    let h=99;
+
+      function getRandomInt(max){
+        return Math.floor(Math.random()*~~(max));
+      };
+
+    z = getRandomInt(v);
+
+    
+    x *= z;
+    y /= z;
+    h %= z;
+    
+
+    forbut_2_0.innerHTML = x;
+    forbut_2_1.innerHTML = y;
+    forbut_2_2.innerHTML = z;
+    forbut_2_3.innerHTML = v;
+    forbut_2_4.innerHTML = h;
+   
+  
+     } ;
+
+    
+</script>
+
+
 </body>
 </html>
