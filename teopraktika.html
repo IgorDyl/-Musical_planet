@@ -359,7 +359,78 @@ number_input.onchange = function () {
   
      } ;
 
+  
+var person = {
+  firstName: "\"Дмитрий\"",
+  lastName: '\"Дыль\"',
+  patronymic: '"Игоревич"',
+  age: 1,
+  text: "Шла Александра по автомагистрали, и употребляла вкусное хлебобулочное изделие"
+};
+  var text_2 = {
+    text_2_0: person.text.replace("употребляла вкусное хлебобулочное изделие","хуй без соли доедала =("),
+    text_2_1: person.firstName.toUpperCase() + "  " + person.lastName.toLowerCase() + ' ' + person.patronymic + ' возраст: ' + person.age + ' (лет)',
+    text_2_2: person.firstName.concat(person.lastName.concat(person.patronymic)),
+  };
+  var text_3 = {
     
+  }
+    but3.onclick = function () {
+      alert(text_2.text_2_1);
+      alert("Или так: " + text_2.text_2_2);
+      alert("Длина Ф.И.О. и тд = " + text_2.text_2_1.length + " букв");
+      alert("Позиция буквы Т в имени - " + person.firstName.indexOf('т'));
+      alert("Кусок текста переменной text - " + person.text.slice(33,100) );
+        
+      alert("Заменили на - " + text_2.text_2_0.slice(33,100));
+
+    }
+    but3.onmouseover = function() {this.style.backgroundColor ='red';}
+    but3.onmouseout = function() {this.style.backgroundColor ='green';}
+/*
+
+*/
+    var cars = ["Субарру","Хонда","Вовльво","Митсубиси"];
+    var cars_2 = ["Вовльво","Митсубиси","Ниссан","Ауди","Паджерик","Субарру","Хонда","Копейка"];
+    but4.onclick = function () {
+   
+      cars[2] = "Не Вольво";
+      alert("Subaru - "+ cars[0] + " ,а Vovlo - " + cars[2]);
+      alert("всего в списке машин: " + cars.length);
+      cars[5] = "Фрукт";
+      alert("А теперь " + cars.length);
+      alert("Что на 5м месте? - " + cars[4]);
+
+   
+      let ib = 0;
+
+        while(ib<6){
+        /*  alert(typeof(cars[ib]));*/
+          alert( "На  " + (6 - ib) + "-ом месте стоит " + cars[5 - ib] );
+          if(cars[ib] != 'undefined'){
+            
+            alert( "Упс машина на " + (6 - ib) +" месте пропала =(" );
+            cars.pop();
+          }
+          else {cars.pop();}
+          
+          ib++;
+        }
+ 
+      
+
+        let ia = 0;
+        while (ia<8){
+          if(cars[ia] == undefined) {
+              cars[ia] = cars_2[ia];
+          } 
+            if(cars[ia] != undefined) {
+              alert( (1+ia)+ "-ое  место " + " занимает -  " + cars[ia] );
+            }
+         
+          ia++;
+        }
+    }  
 </script>
 
 
