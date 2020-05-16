@@ -287,19 +287,22 @@ while(x<5) {
 
 <input id="number_input" type="text"> </input>
 <button type="button" id="but2">KNOPKA.</button>
-<p>Записанное число</p>
+<p>Записанное число 'z'</p>
 <p id="forbut_2_3">v</p>
-<p>Рандом от заданного числа</p>
+<p>Рандом от заданного числа 'z'</p>
 <p id="forbut_2_2">z</p>
-<p>Деления (80 / z )</p>
+<p>Делениe (80 / z )</p>
 <p id="forbut_2_1">y</p>
 <p>умножение (10* z)  </p>
 <p id="forbut_2_0">x </p>
-<p> Остаток от деления 99(%) </p>
+<p> Остаток от деления 99%z </p>
 <p id="forbut_2_4"> h</p>
 
+<p>------------------------------------------------------------</p>
+<button type="button" id="but3">Алерт на список значений</button>
 
-
+<p>------------------------------------------------------------</p>
+<button type="button" id="but4">KNOPA JMI</button>
 
 <script>
 
@@ -307,16 +310,7 @@ while(x<5) {
   but.onclick = function () {
   demo.innerHTML = Date();
     };
-/*alert(15 % 9);
-%- выводит остаток после деления 
-*/
-/*
- let z = getRandomInt(9);
-    let x = 15;
-    let y = x; 
-    forbut_2_2.innerHTML = z;
 
-*/
  input.oninput = function() {
       result.innerHTML = input.value;
      };
@@ -328,10 +322,10 @@ number_input.onchange = function () {
     v = number_input.value;
 }
 
-number_input.onchange = function () {
-    v = number_input.value;
-}
 
+/*
+
+*/
   but2.onclick = function () {
     let x=10;
     let y=80;
@@ -358,8 +352,8 @@ number_input.onchange = function () {
    
   
      } ;
+/*------------------------*/
 
-  
 var person = {
   firstName: "\"Дмитрий\"",
   lastName: '\"Дыль\"',
@@ -430,7 +424,7 @@ var person = {
          
           ia++;
         }
-    }  
+    }
 </script>
 
 
